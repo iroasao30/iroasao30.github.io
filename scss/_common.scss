@@ -462,6 +462,11 @@ body {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    a{
+        &:hover{
+            opacity: .7;
+        }
+    }
     @include sp{
         width: 90%;
         margin: 0 auto 3rem auto;
