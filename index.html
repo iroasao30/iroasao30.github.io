@@ -54,9 +54,11 @@
                 </p>
             </div>
 
-            <a href="">
-                <img src="./images/ticket_btn.png" alt="">
-            </a>
+            <p class="buy_ticket">
+                <a href="">
+                    <img src="./images/ticket_btn.png" alt="">
+                </a>
+            </p>
         </section>
 
         <div class="story_wrapper">
@@ -322,8 +324,19 @@
 
 </body>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+    $(function () {
 
-
+    //スルスルっとスクロールでトップへもどる
+    $('.page_top').click(function () {
+        $('body,html').animate({
+            scrollTop: 0
+        }, 1000);
+        return false;
+    });
+});
+</script>
 
 
 </html>
