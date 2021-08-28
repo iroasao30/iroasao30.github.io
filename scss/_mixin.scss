@@ -1,0 +1,40 @@
+// ========================================
+// mixin ミックスイン
+// ========================================
+
+/* media query
+====================================== */
+
+ $media-sp: 640px;
+  
+  //スタイルだけでなくメディアクエリの処理ごと@includeで渡したいので中身に@contentをつけておく
+  
+  @mixin sp {
+    @media only screen and (max-width: $media-sp) {
+      @content;
+    }
+  }
+/* Only output numerical values
+/* 数値のみ出力する
+====================================== */
+@function strip-unit($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+      @return $number / ($number * 0 + 1);
+    }
+    @return $number;
+  }
+  
+  // ========================================
+  // variables 変数一覧
+  // ========================================
+  /* font $size
+  ====================================== */
+  $font-size-default: 16px;
+
+  /* font-size フォントサイズのrem表示用
+  ====================================== */
+  @mixin font($size: $font-size-default) {
+    font-size: $size + px;
+    font-size: ($size / strip-unit($font-size-default)) * 1rem;
+  }
+  
